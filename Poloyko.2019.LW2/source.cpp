@@ -36,7 +36,7 @@ int main()
 
 	double comparison = matrixComparison(matrixA, matrixB, n, matrixNorm);
 
-	cout << comparison << endl;
+	cout << fabs(comparison) << endl;
 
 	system("pause");
 
