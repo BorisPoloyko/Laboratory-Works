@@ -71,7 +71,7 @@ double taylor(int i, int j)
 
 double customSin(double from, double accuracy)
 {
-	from = (double)fmod(from, 3.14);
+	from = (double)fmod(from, 3.14*2);
 	double sin = 0.0, term = from;
 	int i = 1;
 	while (fabs(term)>accuracy)
