@@ -73,10 +73,11 @@ double customSin(double number, double accuracy)
 	{
 		throw out_of_range("Accuracy can not be less than 0 or more than 1");
 	}
-	number = fmod(number, 3.14*2);
+	const double PI = 3.14159265358979323846;
+	number = fmod(number, PI*2);
 	double sin = 0, term = number;
 	int i = 1;
-	while (abs(term)>accuracy)
+	while (abs(term)> accuracy)
 	{
 		sin += term;
 		term *= -1.0*(number * number) / (2 * i) / (2 * i + 1);
