@@ -3,21 +3,34 @@
 
 using namespace std;
 
-double** MatrixExtension::createSquareMatrix(int n)
+double** MatrixExtension::createMatrix(int columns, int rows)
 {
-	double** matrix = new double*[n];
-	for (int i = 0; i < n; ++i)
+	if (rows <= 0 || columns <=0)
 	{
-		matrix[i] = new double[n];
+		throw std::invalid_argument("Number of rows and columns in a matrix can not be less or equal to 0.");
+	}
+	double** matrix = new double*[columns];
+	for (int i = 0; i < columns; ++i)
+	{
+		matrix[i] = new double[rows];
 	}
 	return matrix;
 }
 
-void  MatrixExtension::displaySquareMatrix(double** matrix, int n)
+void  MatrixExtension::displayMatrix(double** matrix,int columns, int rows)
 {
-	for (int i = 0; i < n; i++)
+	if (rows <= 0 || columns <= 0)
 	{
-		for (int j = 0; j < n; j++)
+		throw std::invalid_argument("Number of rows and columns in a matrix can not be less or equal to 0.");
+	}
+	if (matrix == nullptr)
+	{
+		throw std::invalid_argument("Matrix can not be null.");
+	}
+
+	for (int i = 0; i < columns; i++)
+	{
+		for (int j = 0; j < rows; j++)
 		{
 			cout.width(15);
 			cout << *(*(matrix + i) + j);
@@ -26,52 +39,53 @@ void  MatrixExtension::displaySquareMatrix(double** matrix, int n)
 	}
 }
 
-double** MatrixExtension::fillSquareMatrix(double** matrix, int n, MatrixType type)
+double** MatrixExtension::fillMatrix(double** matrix, int columns, int rows, MatrixType type)
 {
-	for (int i = 0; i < n; i++)
+	if (matrix == nullptr)
 	{
-		for (int j = 0; j < n; j++)
+		throw invalid_argument("Matrix can not be null.");
+	}
+
+	if (rows <= 0 || columns <= 0)
+	{
+		throw invalid_argument("Number of rows and columns in a matrix can not be less or equal to 0.");
+	}
+
+	for (int i = 0; i < columns; i++)
+	{
+		for (int j = 0; j < rows; j++)
 		{
 			*(*(matrix + i) + j) = type(i, j);
 		}
 	}
+
 	return matrix;
 }
 
-double MatrixExtension::matrixNorm(double** matrix, int n)
+double MatrixExtension::matrixComparisonByDifference(double** matrixA, double** matrixB, int columns, int rows)
 {
-	double maxColumnNorm = 0;
-	for (int j = 0; j < n; j++)
+	if (matrixA == nullptr || matrixB == nullptr)
 	{
-		double columnNorm = 0;
-		for (int i = 0; i < n; i++)
+		throw invalid_argument("Matrix can not be null.");
+	}
+
+	if (rows <= 0 || columns <= 0)
+	{
+		throw invalid_argument("Number of rows and columns in a matrix can not be less or equal to 0.");
+	}
+	double maxDifference = 0;
+	for (int i = 0; i < columns; i++)
+	{
+		double difference = 0;
+		for (int j = 0; j < rows; j++)
 		{
-			columnNorm += abs(*(*(matrix + i) + j));
-		}
-		if (columnNorm > maxColumnNorm)
-		{
-			maxColumnNorm = columnNorm;
+			difference = *(*(matrixA + i) + j) - *(*(matrixB + i) + j);
+			if (difference > maxDifference)
+			{
+				maxDifference = difference;
+			}
 		}
 	}
 
-	double maxRowNorm = 0;
-	for (int i = 0; i < n; i++)
-	{
-		double rawNorm = 0;
-		for (int j = 0; j < n; j++)
-		{
-			rawNorm += abs(*(*(matrix + i) + j));
-		}
-		if (rawNorm > maxRowNorm)
-		{
-			maxRowNorm = rawNorm;
-		}
-	}
-	
-	return (maxColumnNorm > maxRowNorm) ? maxColumnNorm : maxRowNorm;
-}
-
-double MatrixExtension::matrixComparison(double** matrixA, double** matrixB, int n, Attribute attribute)
-{
-	return  attribute(matrixA, n) - attribute(matrixB, n);
+	return maxDifference;
 }
