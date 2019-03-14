@@ -3,15 +3,12 @@
 namespace MatrixExtension
 {
 	typedef double(*MatrixType)(int, int);
-	typedef double(*Attribute)(double**, int);
 
-	double** createSquareMatrix(int);
+	double** createMatrix(int, int);
 
-	void displaySquareMatrix(double**, int);
+	void displayMatrix(double**, int, int);
 
-	double** fillSquareMatrix(double**, int, MatrixType);
+	double** fillMatrix(double**, int,int, MatrixType);
 
-	double matrixNorm(double** , int);
-
-	double matrixComparison(double**, double**, int, Attribute);
+	double matrixComparisonByDifference(double** , double** , int, int);
 }
