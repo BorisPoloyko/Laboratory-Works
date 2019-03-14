@@ -1,8 +1,10 @@
 # Laboratory-Works
 
 14.03.2019. [Matrix.LW2](https://github.com/BorisPoloyko/Laboratory-Works/tree/master/Poloyko.2019.LW2). Example:i)Accuracy 0.01, difference 0.0154938
-| **Experiment, №** | **Accuracy** | **Difference** 
-| -------- | -------- | --------
+### Список студентов
+
+| **ФИО** | **github** | **#1** | **#2** | **#3** | **#4** | **#5** | **#6** | **#7** | **#8** | **#9** | **#10** |
+| -------- | -------- | --------| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
 | Антон Антон | [#1](https://github.com/anton2000anton) | 0 |
 | Галожина Юлия | [#2](https://github.com/GalozhinaYuliya) | 8 |
 | Казаков Ярослав | [#3](https://github.com/EvanderLatine/MMF_1) | 8 |
