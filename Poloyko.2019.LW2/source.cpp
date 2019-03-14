@@ -15,28 +15,27 @@ double accuracy = inputAccuracy();
 
 int main()
 {
-
 	int n = inputSize();
 
-	double** matrixA = createSquareMatrix(n);
+	double** matrixA = createMatrix(n , n);
 
-	matrixA = fillSquareMatrix(matrixA, n, inbuilt);
+	matrixA = fillMatrix(matrixA, n, n, inbuilt);
 
-	displaySquareMatrix(matrixA, n);
-
-	cout << endl;
-
-	double** matrixB = createSquareMatrix(n);
-
-	matrixB = fillSquareMatrix(matrixB, n, taylor);
-
-	displaySquareMatrix(matrixB, n);
+	displayMatrix(matrixA, n , n);
 
 	cout << endl;
 
-	double comparison = matrixComparison(matrixA, matrixB, n, matrixNorm);
+	double** matrixB = createMatrix(n,n);
 
-	cout << fabs(comparison) << endl;
+	matrixB = fillMatrix(matrixB, n,n, taylor);
+
+	displayMatrix(matrixB, n,n);
+
+	cout << endl;
+
+	double comparison = matrixComparisonByDifference(matrixA, matrixB, n,n);
+
+	cout << abs(comparison) << endl;
 
 	system("pause");
 
@@ -54,33 +53,35 @@ int inputSize()
 		{
 			return n;
 		}
-		cout << "Invalid data! Try again, n =  ";
+		throw out_of_range("Size of the matrix can not be less or equal 0.");
 	}
 }
 
 double inbuilt(int i, int j)
 {
-	return (i == j) ? i+1 : (sin(2 * (i+1)*(j+1)) + sin(i+1)) / (((i + 1) - (j + 1) - 4) ^ 3 + ((i + 1) + (j + 1)) ^ 2);
+	return (i == j) ? i+1 : (sin(2 *(i+1)*(j+1)) + sin(i+1)) / (((i + 1) - (j + 1) - 4) ^ 3 + ((i + 1) + (j + 1)) ^ 2);
 }
 
 double taylor(int i, int j)
 {
 	return (i == j) ? i+1 : (customSin(2 * (i + 1)*(j + 1), accuracy) + customSin((i + 1), accuracy)) / (((i + 1) - (j + 1) - 4) ^ 3 + ((i + 1) + (j + 1)) ^ 2);
-
 }
 
-double customSin(double from, double accuracy)
+double customSin(double number, double accuracy)
 {
-	from = (double)fmod(from, 3.14*2);
-	double sin = 0.0, term = from;
+	if (accuracy < 0 || accuracy >1)
+	{
+		throw out_of_range("Accuracy can not be less than 0 or more than 1");
+	}
+	number = fmod(number, 3.14*2);
+	double sin = 0, term = number;
 	int i = 1;
-	while (fabs(term)>accuracy)
+	while (abs(term)>accuracy)
 	{
 		sin += term;
-		term *= -1.0*(from*from) / (2 * i) / (2 * i + 1);
+		term *= -1.0*(number * number) / (2 * i) / (2 * i + 1);
 		i++;
 	}
-
 	return sin;
 }
 
@@ -95,6 +96,6 @@ double inputAccuracy()
 		{
 			return n;
 		}
-		cout << "Invalid data! Try again, accuracy =  ";
+		throw out_of_range("Accuracy can not be less than 0 or more than 1");
 	}
 }
