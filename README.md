@@ -1,6 +1,6 @@
 # Laboratory-Works
-07.03.2019 [Arrays.LW1](https://github.com/BorisPoloyko/Laboratory-Works/tree/master/Poloyko.2019.LW1)
-###Results
+07.03.2019 [Arrays.LW1](https://github.com/BorisPoloyko/Laboratory-Works/tree/master/Poloyko.2019.LW1).
+### Results
 
 | **Experiment, №** | **Array** |**Number of 0 and 1 in a number (respectively)**|**Deleted elements**|**New array**|
 | -------- | -------- | --------| --------|--------|
