@@ -20,3 +20,5 @@
 | 3 | 50 | 0.0001 |8.62431e-05|
 | 4 |100|0.00000001|7.94269e-09|
 |5|150|0.00000000001| 1.05742e-11 |
+
+20.03.2019. [NonSquareMatrix.LW3](https://github.com/BorisPoloyko/Laboratory-Works/tree/master/Poloyko.2019.LW3).
