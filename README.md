@@ -4,7 +4,7 @@
 
 | **Experiment, №** | **Array** |**Number of 0 and 1 in a number (respectively)**|**Deleted elements**|**New array**|
 | -------- | -------- | --------| --------|--------|
-| 1 |7 5 -10 | 2/2 |  -10 | 5 7 |
+| 1 |7 5 -10 | 2/2 | -10 | 5 7 |
 | 2 | -7 -5.3 -9.6 10 |   2/2 | -9.6 10 | -5.3 -7 |
 | 3 | 25 1 7.4 -5.6 9 5 |   2/3 | 25 | 1 -5.6 9 5 7.4 |
 
@@ -24,9 +24,9 @@
 20.03.2019. [NonSquareMatrix.LW3](https://github.com/BorisPoloyko/Laboratory-Works/tree/master/Poloyko.2019.LW3).
 ### Results
 
-| **Row of a Matrix, №** | **Row** |**Row of a sorted Matrix, №**|**Sorted Row**|
-| -------- | -------- | --------| --------|
-| 1 |7 5 -10 | 1 | 5 -10 7 | 5 7 |
-| 2 | 7 5 9 10 | 2 | 5 9 10 7 | -5.3 -7 |
-| 3 | 25 1 7.4 -5.6 9 5 | 3 | 1 5 9 -5.6 7.4 25 | 1 -5.6 9 5 7.4 |
-| 4 | 15.8 -31 1 -3 7.5| 4 | 15.8 -31 1 -3 7.5 (row wasn't chosen to be sorted)|
+| **Row of a Matrix, №** | **Row** |**Row of a sorted Matrix, №**|**Sorted Row**|**Number of 0 and 1 in a number (respectively)**|**New Row**|
+| -------- | -------- | --------| --------|--------|--------|
+| 1 |7 5 -10 | 1 | 5 -10 7 | 2/2 | 5 7 |
+| 2 | -7 -5.3 -9.6 10| 2 | -5.3 -9.6 10 -7 | 2/2 | -5.3 -7|
+| 3 | 25 1 7.4 -5.6 9 5 | 3 | 1 5 9 -5.6 7.4 25 | 2/2 |1 5 -5.6 7.4 25|
+| 4 | 15.8 -31 1 -3 7.5| 4 | 15.8 -31 1 -3 7.5 (row wasn't chosen to be sorted)|2/2|15.8 -31 1 -3 7.5|
