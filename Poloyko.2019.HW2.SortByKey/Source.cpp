@@ -25,6 +25,10 @@ int main()
 
 void quickSort(char** words, int left, int right, Key key)
 {
+	if (words == nullptr)
+	{
+		throw std::invalid_argument("Matrix can not be null.");
+	}
 	int i = left, j = right;
 	char* pivot = words[(left + right) / 2]; 
 	while (i <= j)
@@ -57,5 +61,9 @@ void quickSort(char** words, int left, int right, Key key)
 
 int byAlphabetFirtsLetter(char* string)
 {
+	if (string == nullptr)
+	{
+		throw std::invalid_argument("String can not be null.");
+	}
 	return (int)string[0];
 }
