@@ -7,7 +7,7 @@ using namespace StringExtention;
 typedef int(*Key)(char*);
 void quickSort(char**, int, int, Key);
 
-int byAlphabetFirtsLetter(char*);
+int byAlphabetFirstLetter(char*);
 
 int main()
 {
@@ -16,7 +16,7 @@ int main()
 	cout << n;
 	char** words = obtainWords(string, n);
 	displayWords(words, n);
-	quickSort(words, 0, n-1, byAlphabetFirtsLetter);
+	quickSort(words, 0, n-1, byAlphabetFirstLetter);
 	displayWords(words, n);
 
 	system("pause");
@@ -59,7 +59,7 @@ void quickSort(char** words, int left, int right, Key key)
 }
 
 
-int byAlphabetFirtsLetter(char* string)
+int byAlphabetFirstLetter(char* string)
 {
 	if (string == nullptr)
 	{
