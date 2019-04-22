@@ -13,6 +13,8 @@
 
 
 14.03.2019. [Matrix.LW2](https://github.com/BorisPoloyko/Laboratory-Works/tree/master/Poloyko.2019.LW2).
+
+24.04.2019. [Files](https://github.com/BorisPoloyko/Laboratory-Works/tree/master/Poloyko.2019.Files/HW2.Matrix)
 ### Results
 
 | **Experiment, №** | **Matrix size, n*n** |**Accuracy**|**Difference**|
