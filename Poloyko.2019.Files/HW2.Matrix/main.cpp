@@ -47,8 +47,6 @@ int main(int argc, const char * argv[])
 void CreateFile(char* fileName, int n, double** matrixA, double** matrixB)
 {
     ofstream streamOut(fileName);
-    //    ofstream streamOut;
-    //    streamOut.open(fileName, ios::out);
     
     if (!streamOut.is_open())
     {
