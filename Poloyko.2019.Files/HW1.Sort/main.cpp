@@ -32,8 +32,6 @@ int main(int argc, const char * argv[])
     
     const int N = 30;
     char* fileName = "/Users/larisapoloyko/Desktop/XCode/Files/task.txt";
-    //cout << "Enter the name of file: ";
-    //cin.getline(fileName, N, '\n');
     int n;
     cout << "Enter count of the numbers:";
     cin >> n;
@@ -49,16 +47,13 @@ int main(int argc, const char * argv[])
     
     AddFile(fileName, array, n, "\Without elements with corresponding amount of zeroes and ones:\n");
     
-    //system("pause");
     return 0;
 }
 
 void CreateFile(char* fileName, int n)
 {
     ofstream streamOut(fileName);
-    //    ofstream streamOut;
-    //    streamOut.open(fileName, ios::out);
-    
+   
     if (!streamOut.is_open())
     {
         cout << "Cannot open file to write!" << endl;
