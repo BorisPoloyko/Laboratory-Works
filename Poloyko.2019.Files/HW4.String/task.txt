@@ -1,0 +1,4 @@
+Initial string:
+Why are we still here? Just to suffer?
+Encrypted string:
+Why are (04)(22) still here? Just (07)(12) suffer?
